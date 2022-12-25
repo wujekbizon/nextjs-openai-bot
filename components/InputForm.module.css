@@ -1,0 +1,36 @@
+.form {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #40414f;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form textarea {
+  width: 100%;
+
+  color: #fff;
+  font-size: 18px;
+
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.form button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.form img {
+  width: 30px;
+  height: 30px;
+}
