@@ -102,7 +102,7 @@ const Chat = () => {
         console.log(err);
       }
     },
-    [formRef.current]
+    []
   );
 
   return (
