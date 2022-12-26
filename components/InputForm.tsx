@@ -1,4 +1,5 @@
 import styles from './InputForm.module.css';
+import Image from 'next/image';
 
 type Props = {
   onHandleSubmit: React.FormEventHandler<HTMLFormElement>;
@@ -15,7 +16,7 @@ const InputForm = ({ onHandleSubmit, formRef }: Props) => {
         placeholder="Ask Codex..."
       ></textarea>
       <button>
-        <img src="/send.svg" />
+        <Image src="/send.svg" alt="send" width={30} height={30} />
       </button>
     </form>
   );

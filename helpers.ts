@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const generateUniqueId = () => {
   const timestamp = Date.now();
   const randomNumber = Math.random();
@@ -27,9 +29,11 @@ export const chatStripe = (
     <div class="wrapper ${isAi && 'ai'}">
       <div class="chat">
           <div class="profile">
-              <img 
+              <Image  
                 src=${isAi ? '/bot.svg' : '/user.svg'} 
                 alt="${isAi ? 'bot' : 'user'}" 
+                width=${25}
+                heigth=${25}
               />
           </div>
           <div class="message" id=${uniqueId}>${value}</div>
