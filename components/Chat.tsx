@@ -77,7 +77,7 @@ const Chat = () => {
       // messageDiv.innerHTML = '...';
       loader(messageDiv);
 
-      const response = await fetch('https://nextjs-openai-bot.vercel.app/api', {
+      const response = await fetch('https://wolfai-chat-bot.vercel.app/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
