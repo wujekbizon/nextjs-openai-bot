@@ -41,10 +41,8 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: row;
-
   align-items: center;
   gap: 10px;
 }
@@ -53,9 +51,7 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-
   background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
-
   display: flex;
   justify-content: center;
   align-items: center;

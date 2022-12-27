@@ -49,7 +49,7 @@ const Chat = () => {
       const interval = loader(messageDiv, loadInterval);
       //  fetch api
       const response = await fetchOpenAiApi(data, interval, messageDiv);
-      console.log(response.ok);
+
       if (response.ok) {
         setIsInitializing(true);
       }
