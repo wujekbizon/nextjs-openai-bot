@@ -29,6 +29,7 @@ const fetchOpenAiApi = async (
     element.innerHTML = 'Something went wrong';
     console.log(err);
   }
+  return response;
 };
 
 export default fetchOpenAiApi;

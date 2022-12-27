@@ -1,6 +1,6 @@
 import styles from './Chat.module.css';
 import InputForm from './InputForm';
-import { useRef, useEffect, useMemo, useCallback } from 'react';
+import { useRef, useEffect, useMemo, useCallback, useState } from 'react';
 import { generateUniqueId, chatStripe, loader } from '../helpers/helpers';
 import fetchOpenAiApi from '../helpers/apiCalls';
 
@@ -9,6 +9,7 @@ let loadInterval: NodeJS.Timer;
 const Chat = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const chatContainerRef = useRef<HTMLElement | null>(null);
+  const [isInitializing, setIsInitializing] = useState(false);
 
   const handleSubmitCallback: React.FormEventHandler<HTMLFormElement> =
     useCallback(async (e) => {
@@ -47,7 +48,11 @@ const Chat = () => {
 
       const interval = loader(messageDiv, loadInterval);
       //  fetch api
-      fetchOpenAiApi(data, interval, messageDiv);
+      const response = await fetchOpenAiApi(data, interval, messageDiv);
+      console.log(response.ok);
+      if (response.ok) {
+        setIsInitializing(true);
+      }
     }, []);
 
   const memoizeKeyPressHandler = useMemo(() => {
@@ -72,6 +77,17 @@ const Chat = () => {
 
   return (
     <>
+      <header className={styles.header}>
+        <div
+          className={!isInitializing ? `${styles.line}` : `${styles.online}`}
+        />
+        {!isInitializing ? (
+          <h4>Bot initializing ...</h4>
+        ) : (
+          <h4>Jarvis GPT 3 Chat Bot </h4>
+        )}
+      </header>
+
       <section
         className={styles.chat_container}
         ref={chatContainerRef}
