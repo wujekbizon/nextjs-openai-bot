@@ -1,13 +1,14 @@
 .form {
-  width: 100%;
-  max-width: 1280px;
+  width: 70%;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 10px;
-  background: #40414f;
+  background: #031b34;
 
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .form textarea {
@@ -23,14 +24,35 @@
   outline: none;
 }
 
+.form textarea::placeholder {
+  color: #c0c5cc;
+  font-weight: 200;
+}
+
 .form button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: 0;
   border: 0;
   cursor: pointer;
   background: transparent;
+  border-radius: 5px;
+  background: rgba(4, 12, 24, 0.5);
+  transition: all 0.3s ease-out;
 }
 
 .form img {
+  width: 25px;
+  height: 25px;
+}
+
+.send img {
   width: 30px;
   height: 30px;
+}
+
+.form button:hover {
+  background: rgba(4, 12, 24, 1);
 }

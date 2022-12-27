@@ -1,26 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700&family=Bellefair&family=Barlow:wght@200;300;400;500;600;700&display=swap';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
 }
 
 body {
-  background: #343541;
+  background: #040c18;
 }
 
 #__next {
   width: 100vw;
   height: 100vh;
-  background: #343541;
+  background: linear-gradient(
+    103.22deg,
+    rgba(0, 40, 83, 1) 0%,
+    rgba(4, 12, 24, 1) 100%
+  );
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 15px;
 }
 
 .wrapper {
@@ -29,7 +34,7 @@ body {
 }
 
 .ai {
-  background: #40414f;
+  background: #040c18;
 }
 
 .chat {
@@ -39,16 +44,17 @@ body {
 
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+
+  align-items: center;
   gap: 10px;
 }
 
 .profile {
   width: 36px;
   height: 36px;
-  border-radius: 5px;
+  border-radius: 10px;
 
-  background: #5436da;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
 
   display: flex;
   justify-content: center;
@@ -56,7 +62,16 @@ body {
 }
 
 .ai .profile {
-  background: #10a37f;
+  background: radial-gradient(
+    circle at 30% -100%,
+    #042c54 25%,
+    #042c54 85%,
+    #1b78de 100%
+  );
+}
+
+.ai .message {
+  color: #ae67fa;
 }
 
 .profile img {
@@ -68,7 +83,7 @@ body {
 .message {
   flex: 1;
 
-  color: #dcdcdc;
+  color: white;
   font-size: 20px;
 
   max-width: 100%;

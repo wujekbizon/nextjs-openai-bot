@@ -1,6 +1,6 @@
-import Chat from '../components/Chat';
+import Home from '../components/Home';
 
-const Home = () => {
-  return <Chat />;
+const HomePage = () => {
+  return <Home />;
 };
-export default Home;
+export default HomePage;

@@ -1,0 +1,36 @@
+.home {
+  width: 100vh;
+  height: 100vh;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient__text {
+  font-size: 45px;
+  text-transform: capitalize;
+  background: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wrapper button {
+  margin-top: 15px;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  background: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.wrapper button:hover {
+  background: linear-gradient(89.97deg, #f49867 1.84%, #ae67fa 102.67%);
+  transform: scale(1.1);
+}
