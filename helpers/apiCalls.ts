@@ -1,12 +1,11 @@
 import { typeText } from './helpers';
-const apiUrl = 'https://wolfai-chat-bot.vercel.app/api';
 
 const fetchOpenAiApi = async (
   data: FormData,
   interval: NodeJS.Timer,
   element: HTMLElement
 ) => {
-  const response = await fetch(apiUrl, {
+  const response = await fetch('https://wolfai-chat-bot.vercel.app/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
