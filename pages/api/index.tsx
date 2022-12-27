@@ -1,33 +1,24 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
 import Cors from 'cors';
+import runMiddleware from '../../helpers/middleware';
 
 // Initializing the cors middleware
 const cors = Cors({
-  methods: ['POST', 'GET', 'HEAD'],
+  methods: ['POST', 'GET', 'HEAD', 'PUT', 'PATCH', 'DELETE'],
 });
-
-// Helper method to wait for a middleware to execute before continuing
-// And to throw an error when an error happens in a middleware
-function runMiddleware(
-  req: NextApiRequest,
-  res: NextApiResponse,
-  fn: Function
-) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result: any) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-
-      return resolve(result);
-    });
-  });
-}
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // Run the middleware
   await runMiddleware(req, res, cors);
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).json({ message: 'OK' });
+  }
+
+  if (req.method === 'GET') {
+    res.status(200).json({ message: 'This is Codex AI' });
+  }
 
   if (req.method === 'POST') {
     const configuration = new Configuration({
@@ -59,13 +50,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         console.log(error);
       }
     }
-  }
-  if (req.method === 'GET') {
-    res.status(200).json({ message: 'This is Codex AI' });
-  }
-
-  if (req.method === 'OPTIONS') {
-    return res.status(200).send('ok');
   }
 };
 export default handler;
