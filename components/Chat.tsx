@@ -33,7 +33,7 @@ const Chat = () => {
 
       // bot's chatstripe
       const uniqueId = generateUniqueId();
-      chatContainerRef.current.innerHTML += chatStripe(true, ' ', uniqueId);
+      chatContainerRef.current.innerHTML += chatStripe(true, '', uniqueId);
 
       // to focus scroll to the bottom
       chatContainerRef.current.scrollTop =

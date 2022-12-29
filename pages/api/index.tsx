@@ -17,7 +17,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (req.method === 'GET') {
-    res.status(200).json({ message: 'This is Codex AI' });
+    res.status(200).json({ message: 'This is Jarvis AI' });
   }
 
   if (req.method === 'POST') {
